@@ -5,47 +5,42 @@ import { Grid, Cell } from 'styled-css-grid';
 import { rem } from 'polished';
 /* eslint-disable import/no-unresolved */
 import Button from 'components/button/button';
+import Contributor from 'components/contributor/contributor';
+import { Default, Mobile } from 'components/responsive';
 import { Form, Input, TextArea } from 'components/forms';
 import Image from 'components/image/image';
 import { isEmail, isRequired } from 'components/forms/validations';
 import { List, ListItem } from 'components/list';
-import TextLink from 'components/textLink/textLink';
+import Paragraph from 'components/typography/paragraph';
 /* eslint-enable import/no-unresolved */
 
-const ContributorHeading = styled.span`
-  display: flex;
-  align-items: center;
+const StyledMobile = styled(Mobile)`
+  padding: ${rem('20px')};
+  margin-top: ${rem('30px')};
 `;
 
-const ContributorName = styled.h3`
-  margin: 0;
-  padding-right: ${rem('10px')};
+const StyledListItem = styled(ListItem)`
+  margin-bottom: ${rem('25px')};
+
+  @media (max-width: ${props => props.theme.mobileMax}) {
+    > * {
+      display: block;
+      text-align: center;
+    }
+  }
 `;
 
-const formatContributorInfo = contributor => (
-  <span>
-    <ContributorHeading>
-      <ContributorName>{contributor.name}</ContributorName>
-      <span>({contributor.title})</span>
-    </ContributorHeading>
-    <div>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: contributor.bio.childMarkdownRemark.html,
-        }}
-      />
-      {contributor.socialMediaLinks && (
-        <List inline>
-          {_.map(contributor.socialMediaLinks, (link, id) => (
-            <ListItem key={id}>
-              <TextLink external to={link.url} text={link.type} underline />
-            </ListItem>
-          ))}
-        </List>
-      )}
-    </div>
-  </span>
-);
+const TextCell = styled(Cell)`
+  @media (min-width: ${props => props.theme.mobileMax}) {
+    margin-right: ${rem('15px')};
+  }
+`;
+
+const FormCell = styled(Cell)`
+  @media (max-width: ${props => props.theme.mobileMax}) {
+    margin-bottom: ${rem('20px')};
+  }
+`;
 
 const AboutPage = ({ data }) => {
   const usNode = data.us.edges[0].node;
@@ -54,28 +49,19 @@ const AboutPage = ({ data }) => {
     el => el.__typename === 'ContentfulList'
   );
 
-  return (
-    <Grid columns="2fr 1fr" areas={['text form form', 'bios bios bios']}>
-      <Cell area="text">
+  const content = (
+    <React.Fragment>
+      <TextCell area="text">
         <h1>{usNode.title}</h1>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: text.content.childMarkdownRemark.html,
-          }}
-        />
-        Putting this here for now: <br />
-        <Form name="subscribe" successText="You subscribed!">
-          <Input
-            addOn={<Button text="Subscribe" />}
-            label={{ text: 'Subscribe to our newsletter!' }}
-            name="email"
-            placeholder="example@email.com"
-            validate={isEmail}
-            required
+        <Paragraph isLarge>
+          <span
+            dangerouslySetInnerHTML={{
+              __html: text.content.childMarkdownRemark.html,
+            }}
           />
-        </Form>
-      </Cell>
-      <Cell area="form">
+        </Paragraph>
+      </TextCell>
+      <FormCell area="form">
         <Form
           name="contact"
           successText="Thanks! We'll be reaching out shortly."
@@ -105,25 +91,50 @@ const AboutPage = ({ data }) => {
           />
           <Button text="Contact Us" />
         </Form>
-      </Cell>
+      </FormCell>
       <Cell area="bios">
         <h2>{contributorsList.title}</h2>
         <List>
           {_.map(contributorsList.items, contributor => (
-            <ListItem id={contributor.name} key={contributor.name}>
+            <StyledListItem id={contributor.name} key={contributor.name}>
               <Image
                 resolutions={contributor.image.resolutions}
                 alt={contributor.name}
                 title={contributor.title}
-                caption={formatContributorInfo(contributor)}
+                caption={
+                  <Contributor
+                    bio={contributor.bio}
+                    name={contributor.name}
+                    socialMediaLinks={contributor.socialMediaLinks}
+                    title={contributor.title}
+                  />
+                }
                 captionPosition="right"
                 circle
               />
-            </ListItem>
+            </StyledListItem>
           ))}
         </List>
       </Cell>
-    </Grid>
+    </React.Fragment>
+  );
+
+  return (
+    <React.Fragment>
+      <StyledMobile>
+        <Grid
+          columns="repeat(auto-fit,minmax(120px,1fr))"
+          areas={['text', 'form', 'bios']}
+        >
+          {content}
+        </Grid>
+      </StyledMobile>
+      <Default>
+        <Grid columns="2fr 1fr" areas={['text form form', 'bios bios bios']}>
+          {content}
+        </Grid>
+      </Default>
+    </React.Fragment>
   );
 };
 
