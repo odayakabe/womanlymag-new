@@ -72,7 +72,6 @@ const items = {
   '/about': 'About',
   '/issues': 'Issues',
   '/resources': 'Resources',
-  '/glossary': 'Glossary',
 };
 
 class NavBar extends Component {

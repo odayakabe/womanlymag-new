@@ -1,10 +1,7 @@
 import React from 'react';
 
-const GlossaryPage = ({ data }) => {
-  const usEdges = data.us.edges;
-
-  return <div>Glossary...{usEdges[0].node.id}</div>;
-};
+// TODO: for after launch
+const GlossaryPage = () => <div />;
 
 export default GlossaryPage;
 

@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
-import { transitions } from 'polished';
+import { rem, transitions } from 'polished';
 
 const StyledLink = styled(Link)`
   color: ${props => props.theme.text};
   text-decoration: ${props => (props.underline ? 'underline' : 'none')};
   font-weight: 700;
+  font-size: ${props => (props.large ? rem('22px') : 'inherit')};
   ${transitions('all 0.25s ease-in')} &:hover {
     color: ${props =>
       props.withHover ? props.theme.linkHoverColor : props.theme.text};
@@ -16,11 +17,12 @@ const StyledLink = styled(Link)`
 
 const StyledExternalLink = StyledLink.withComponent('a');
 
-const TextLink = ({ external, text, to, underline, withHover }) => {
+const TextLink = ({ external, large, text, to, underline, withHover }) => {
   if (external) {
     return (
       <StyledExternalLink
         href={to}
+        large={large}
         target="_blank"
         underline={underline}
         withHover={withHover}
@@ -31,7 +33,12 @@ const TextLink = ({ external, text, to, underline, withHover }) => {
   }
 
   return (
-    <StyledLink to={to} underline={underline} withHover={withHover}>
+    <StyledLink
+      to={to}
+      large={large}
+      underline={underline}
+      withHover={withHover}
+    >
       {text}
     </StyledLink>
   );
@@ -39,12 +46,14 @@ const TextLink = ({ external, text, to, underline, withHover }) => {
 
 TextLink.defaultProps = {
   external: false,
+  large: false,
   underline: true,
   withHover: true,
 };
 
 TextLink.propTypes = {
   external: PropTypes.bool,
+  large: PropTypes.bool,
   text: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
   underline: PropTypes.bool,

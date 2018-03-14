@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 
+// TODO: for after launch
 const ArticlesPage = ({ data }) => {
   const usEdges = data.us.edges;
 
