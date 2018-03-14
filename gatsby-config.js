@@ -8,7 +8,20 @@ module.exports = {
     'gatsby-plugin-resolve-src',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
-    'gatsby-transformer-remark',
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              target: '_blank',
+              rel: 'nofollow',
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-source-contentful',
       options: {

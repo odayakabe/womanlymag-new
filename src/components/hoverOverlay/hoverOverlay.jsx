@@ -1,6 +1,15 @@
 import React from 'react';
+import Link from 'gatsby-link';
 import styled from 'styled-components';
 import { darken, rem, transitions, transparentize } from 'polished';
+
+const StyledLink = styled(Link)`
+  height: inherit;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
 const Container = styled.div`
   position: relative;
@@ -34,6 +43,7 @@ const TextContainer = styled.div`
   justify-content: center;
   margin-bottom: ${rem('10px')};
   padding: ${rem('30px')};
+  font-weight: 400;
   left: 0;
   right: 0;
   bottom: 0;
@@ -53,6 +63,7 @@ const Text = styled.span`
   font-size: ${rem('20px')};
   margin-top: ${rem('20px')};
   ${transitions('margin 0.25s ease-in-out')};
+  color: ${props => props.theme.text};
 `;
 
 const Animation = styled.div`
@@ -82,16 +93,24 @@ const Animation = styled.div`
   }
 `;
 
-const HoverOverlay = ({ children, heading, text }) => (
-  <Container>
-    {React.Children.only(children)}
-    <Animation />
-    <ColorOverlay />
-    <TextContainer>
-      <Heading>{heading}</Heading>
-      <Text>{text}</Text>
-    </TextContainer>
-  </Container>
-);
+const HoverOverlay = ({ children, heading, text, url }) => {
+  const content = (
+    <Container>
+      {React.Children.only(children)}
+      <Animation />
+      <ColorOverlay />
+      <TextContainer>
+        <Heading>{heading}</Heading>
+        <Text>{text}</Text>
+      </TextContainer>
+    </Container>
+  );
+
+  if (url) {
+    return <StyledLink to={url}>{content}</StyledLink>;
+  }
+
+  return content;
+};
 
 export default HoverOverlay;

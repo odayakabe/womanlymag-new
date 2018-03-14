@@ -29,7 +29,7 @@ const Contributor = ({ bio, name, socialMediaLinks, title }) => (
   <div>
     <Heading>
       <Name>{name}</Name>
-      <span>({title})</span>
+      {title && <span>({title})</span>}
     </Heading>
     <div>
       {bio && (

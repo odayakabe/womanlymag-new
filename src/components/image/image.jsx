@@ -8,6 +8,7 @@ const ImageContainer = styled.div`
   display: ${props => (props.caption ? 'flex' : 'block')};
   flex-flow: row wrap;
   align-items: center;
+  cursor: ${props => (props.onClick ? 'pointer' : 'default')};
 `;
 
 const StyledImage = styled(GatsbyImage)`
@@ -35,7 +36,9 @@ const Image = ({
   caption,
   captionPosition,
   circle,
+  className,
   isBackground,
+  onClick,
   resolutions,
   sizes,
   title,
@@ -47,6 +50,7 @@ const Image = ({
   if (isBackground) {
     return (
       <StyledBackgroundImage
+        className={className}
         resolutions={resolutions}
         sizes={sizes}
         backgroundSize={backgroundSize}
@@ -55,7 +59,7 @@ const Image = ({
   }
 
   return (
-    <ImageContainer caption={caption}>
+    <ImageContainer className={className} caption={caption} onClick={onClick}>
       <StyledImage
         alt={alt}
         circle={circle}
@@ -77,6 +81,7 @@ Image.defaultProps = {
   caption: null,
   captionPosition: 'bottom',
   circle: false,
+  onClick: null,
   resolutions: null,
   sizes: null,
 };
@@ -87,6 +92,7 @@ Image.propTypes = {
   caption: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   captionPosition: PropTypes.oneOf(['right', 'bottom']),
   circle: PropTypes.bool,
+  onClick: PropTypes.func,
   resolutions: PropTypes.shape({
     base64: PropTypes.string,
     height: PropTypes.number,

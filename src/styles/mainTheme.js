@@ -10,6 +10,7 @@ export default {
   accent: pink,
   inputBgFocusColor: transparentize(0.85, blue),
   inputBorderColor: transparentize(0.75, black),
+  issueLabelBg: pink,
   errorBackgroundColor: transparentize(0.85, red),
   errorColor: red,
   labelColor: transparentize(0.25, black),

@@ -21,7 +21,11 @@ const IndexPage = ({ data }) => {
 
   const articleGrid = articles.map(article => (
     <Cell key={article.slug} center middle>
-      <HoverOverlay heading={article.title} text={`${article.previewText}...`}>
+      <HoverOverlay
+        heading={article.title}
+        text={`${article.previewText}...`}
+        url={`/articles/${article.slug}`}
+      >
         <Image
           alt={article.title}
           resolutions={article.thumbnail.resolutions}
