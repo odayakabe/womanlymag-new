@@ -114,6 +114,41 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                 });
               });
             });
+          })
+          .then(() => {
+            graphql(`
+              {
+                allContentfulFooter(limit: 1000) {
+                  edges {
+                    node {
+                      id
+                    }
+                  }
+                }
+              }
+            `).then(result => {
+              // Create Footer
+              const template = path.resolve(
+                './src/components/footer/footer.jsx'
+              );
+              createPage({
+                path: '/footer',
+                component: slash(template),
+              });
+
+              _.each(result.data.allContentfulFooter.edges, edge => {
+                const Footer = path.resolve(
+                  './src/components/footer/footer.jsx'
+                );
+                createPage({
+                  path: `/footer`,
+                  component: slash(Footer),
+                  context: {
+                    id: edge.node.id,
+                  },
+                });
+              });
+            });
 
             resolve();
           });
