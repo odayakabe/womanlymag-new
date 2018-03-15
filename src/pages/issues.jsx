@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import { Grid, Cell } from 'styled-css-grid';
 /* eslint-disable import/no-unresolved */
 import { Default, Mobile } from 'components/responsive';
@@ -8,8 +9,9 @@ import Image from 'components/image/image';
 
 const IssuesPage = ({ data }) => {
   const usEdges = data.us.edges;
+  const issues = _.sortBy(usEdges, ({ node }) => node.number);
 
-  const issueGrid = usEdges.map(({ node }) => {
+  const issueGrid = issues.map(({ node }) => {
     const issueUrl = node.featured ? '/' : `/issues/${node.number}`;
     return (
       <Cell key={node.number} center middle>
