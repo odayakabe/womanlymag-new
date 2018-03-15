@@ -1,18 +1,18 @@
 import React from 'react';
-import Link from 'gatsby-link';
+/* eslint-disable import/no-unresolved */
+import ArticleGrid from 'components/articleGrid/articleGrid';
+/* eslint-enable import/no-unresolved */
 
 const IssuePage = ({ data }) => {
-  const { us } = data;
+  const { us: { articles, number, title } } = data;
 
   return (
-    <div>
-      <h1>Issue...#{us.number}</h1>
-      {us.articles.map(article => (
-        <Link key={article.slug} to={`/articles/${article.slug}`}>
-          {article.title}
-        </Link>
-      ))}
-    </div>
+    <React.Fragment>
+      <h1>
+        Issue #{number}: {title}
+      </h1>
+      <ArticleGrid articles={articles} />
+    </React.Fragment>
   );
 };
 
@@ -30,8 +30,8 @@ export const pageQuery = graphql`
           slug
           previewText
           thumbnail {
-            file {
-              url
+            resolutions(width: 400, height: 400) {
+              ...GatsbyContentfulResolutions
             }
           }
           featured

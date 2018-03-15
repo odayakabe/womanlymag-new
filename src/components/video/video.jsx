@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactPlayer from 'react-player';
 import styled from 'styled-components';
+import { rem } from 'polished';
 
 // https://www.npmjs.com/package/react-player#responsive-player
 // Player ratio: 100 / (1280 / 720)
 const Container = styled.div`
   position: relative;
   padding-top: 56.25%;
+  margin-bottom: ${rem('20px')};
 `;
 
 const Player = styled(ReactPlayer)`

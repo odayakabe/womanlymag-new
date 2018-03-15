@@ -1,8 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { rem } from 'polished';
+
+const Iframe = styled.iframe`
+  margin-bottom: ${rem('20px')};
+`;
 
 const Audio = ({ title, url }) => (
-  <iframe
+  <Iframe
     width="100%"
     height="166"
     scrolling="no"
