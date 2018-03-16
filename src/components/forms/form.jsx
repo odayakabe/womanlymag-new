@@ -58,6 +58,7 @@ class Form extends Component {
           <ReactForm onSubmit={this.handleSubmit}>
             {formApi => (
               <form
+                name={name}
                 onSubmit={formApi.submitForm}
                 data-netlify={isNetlifyForm}
                 data-netlify-honeypot="bot-field"
