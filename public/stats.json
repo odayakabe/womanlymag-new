@@ -1,0 +1,132 @@
+{
+  "assetsByChunkName": {
+    "path---issues-2": [
+      "path---issues-2-5c62ecd1d6262d191483.js",
+      "path---issues-2-5c62ecd1d6262d191483.js.map"
+    ],
+    "path---articles-this-is-also-for-issue-2": [
+      "path---articles-this-is-also-for-issue-2-b562fcd5a2682e32e0d3.js",
+      "path---articles-this-is-also-for-issue-2-b562fcd5a2682e32e0d3.js.map"
+    ],
+    "path---glossary": [
+      "path---glossary-099307b5c2819a506ecf.js",
+      "path---glossary-099307b5c2819a506ecf.js.map"
+    ],
+    "component---src-pages-article-jsx": [
+      "component---src-pages-article-jsx-41e44f1b08b7c30c3d0e.js",
+      "component---src-pages-article-jsx-41e44f1b08b7c30c3d0e.js.map"
+    ],
+    "component---src-pages-issues-jsx": [
+      "component---src-pages-issues-jsx-cfb4a4564964cb66dc89.js",
+      "component---src-pages-issues-jsx-cfb4a4564964cb66dc89.js.map"
+    ],
+    "path---articles-something-fucking-else": [
+      "path---articles-something-fucking-else-e9c15e17f0e546139e33.js",
+      "path---articles-something-fucking-else-e9c15e17f0e546139e33.js.map"
+    ],
+    "path---issues": [
+      "path---issues-11fee2a21d03262ab3a4.js",
+      "path---issues-11fee2a21d03262ab3a4.js.map"
+    ],
+    "path---articles": [
+      "path---articles-b89bc988174c6f1e9bc2.js",
+      "path---articles-b89bc988174c6f1e9bc2.js.map"
+    ],
+    "path---": [
+      "path----557518bd178906f8d58a.js",
+      "path----557518bd178906f8d58a.js.map"
+    ],
+    "path---article": [
+      "path---article-a4789ee80fabc1e4c81c.js",
+      "path---article-a4789ee80fabc1e4c81c.js.map"
+    ],
+    "component---src-layouts-index-jsx": [
+      "component---src-layouts-index-jsx-b4bc2d40298465ee0692.js",
+      "component---src-layouts-index-jsx-b4bc2d40298465ee0692.js.map"
+    ],
+    "component---src-pages-issue-jsx": [
+      "component---src-pages-issue-jsx-79ecbf6f258415b9fcd9.js",
+      "component---src-pages-issue-jsx-79ecbf6f258415b9fcd9.js.map"
+    ],
+    "path---issues-1": [
+      "path---issues-1-0a5ef7363866acb7f922.js",
+      "path---issues-1-0a5ef7363866acb7f922.js.map"
+    ],
+    "path---articles-some-other-thing-for-issue-2": [
+      "path---articles-some-other-thing-for-issue-2-12a5c365b6c6b485b63a.js",
+      "path---articles-some-other-thing-for-issue-2-12a5c365b6c6b485b63a.js.map"
+    ],
+    "component---src-pages-resources-jsx": [
+      "component---src-pages-resources-jsx-10e4700cec2bf97c4f62.js",
+      "component---src-pages-resources-jsx-10e4700cec2bf97c4f62.js.map"
+    ],
+    "path---articles-example-article": [
+      "path---articles-example-article-c971224363be97e89647.js",
+      "path---articles-example-article-c971224363be97e89647.js.map"
+    ],
+    "path---articles-to-forget": [
+      "path---articles-to-forget-63c89202ede37eaf3374.js",
+      "path---articles-to-forget-63c89202ede37eaf3374.js.map"
+    ],
+    "path---index": [
+      "path---index-a7e6f13fd0fc558041d4.js",
+      "path---index-a7e6f13fd0fc558041d4.js.map"
+    ],
+    "component---src-pages-about-jsx": [
+      "component---src-pages-about-jsx-f7577b9fe26ebc8cb82b.js",
+      "component---src-pages-about-jsx-f7577b9fe26ebc8cb82b.js.map"
+    ],
+    "commons": [
+      "commons-98033fc9191a6c9182ce.js",
+      "commons-98033fc9191a6c9182ce.js.map"
+    ],
+    "path---articles-null": [
+      "path---articles-null-4b61ab582253d9a75b35.js",
+      "path---articles-null-4b61ab582253d9a75b35.js.map"
+    ],
+    "path---resources": [
+      "path---resources-81184fb89bbf610cef65.js",
+      "path---resources-81184fb89bbf610cef65.js.map"
+    ],
+    "path---404-html": [
+      "path---404-html-a0e39f21c11f6a62c5ab.js",
+      "path---404-html-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---issue": [
+      "path---issue-6b154cdc403a6f11fa41.js",
+      "path---issue-6b154cdc403a6f11fa41.js.map"
+    ],
+    "component---src-pages-404-jsx": [
+      "component---src-pages-404-jsx-4503918ea3a16cfcdb75.js",
+      "component---src-pages-404-jsx-4503918ea3a16cfcdb75.js.map"
+    ],
+    "component---src-pages-index-jsx": [
+      "component---src-pages-index-jsx-4e5b758c64c1b1856461.js",
+      "component---src-pages-index-jsx-4e5b758c64c1b1856461.js.map"
+    ],
+    "app": [
+      "app-f900dbc9e06cb80e53a6.js",
+      "app-f900dbc9e06cb80e53a6.js.map"
+    ],
+    "component---src-pages-glossary-jsx": [
+      "component---src-pages-glossary-jsx-8b4fb3aca9aa91d7f30a.js",
+      "component---src-pages-glossary-jsx-8b4fb3aca9aa91d7f30a.js.map"
+    ],
+    "path---404": [
+      "path---404-a0e39f21c11f6a62c5ab.js",
+      "path---404-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "component---src-pages-articles-jsx": [
+      "component---src-pages-articles-jsx-0391de603f7ed0e44367.js",
+      "component---src-pages-articles-jsx-0391de603f7ed0e44367.js.map"
+    ],
+    "path---articles-this-is-for-issue-2": [
+      "path---articles-this-is-for-issue-2-0d2fa827b4a83fbdb096.js",
+      "path---articles-this-is-for-issue-2-0d2fa827b4a83fbdb096.js.map"
+    ],
+    "path---about": [
+      "path---about-211844daf27f5feeeea0.js",
+      "path---about-211844daf27f5feeeea0.js.map"
+    ]
+  }
+}
