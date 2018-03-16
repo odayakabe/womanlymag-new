@@ -18,14 +18,14 @@ class Form extends Component {
     submitted: false,
   };
 
-  handleSubmit = values => {
+  handleSubmit = (values, event) => {
     const { name, onSubmit } = this.props;
 
     if (onSubmit) {
       return onSubmit(values);
     }
 
-    return fetch('/', {
+    fetch('/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -46,6 +46,8 @@ class Form extends Component {
           submitted: false,
         });
       });
+
+    return event.preventDefault();
   };
 
   render() {
