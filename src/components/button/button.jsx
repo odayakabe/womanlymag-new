@@ -12,7 +12,7 @@ const StyledButton = styled.button`
   font-family: ${props => props.theme.sansSerifFont};
   display: flex;
   &:hover {
-    background-color: ${props => props.theme.accent};
+    background-color: ${props => props.theme.buttonHoverColor};
     cursor: pointer;
   }
 `;

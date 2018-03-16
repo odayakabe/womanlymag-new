@@ -1,11 +1,17 @@
 import React from 'react';
 import _ from 'lodash';
 import { Grid, Cell } from 'styled-css-grid';
+import styled from 'styled-components';
+import { rem } from 'polished';
 /* eslint-disable import/no-unresolved */
 import { Default, Mobile } from 'components/responsive';
 import HoverOverlay from 'components/hoverOverlay/hoverOverlay';
 import Image from 'components/image/image';
 /* eslint-enable import/no-unresolved */
+
+const MobileContainer = styled.div`
+  margin: 0 ${rem('30px')};
+`;
 
 const IssuesPage = ({ data }) => {
   const usEdges = data.us.edges;
@@ -30,15 +36,19 @@ const IssuesPage = ({ data }) => {
   return (
     <div>
       <Mobile>
-        <Grid
-          columns="repeat(auto-fit,minmax(300px,1fr))"
-          gap="40px"
-          minRowHeight="500px"
-        >
-          {issueGrid}
-        </Grid>
+        <MobileContainer>
+          <h1>Issues</h1>
+          <Grid
+            columns="repeat(auto-fit,minmax(300px,1fr))"
+            gap="40px"
+            minRowHeight="500px"
+          >
+            {issueGrid}
+          </Grid>
+        </MobileContainer>
       </Mobile>
       <Default>
+        <h1>Issues</h1>
         <Grid
           columns="repeat(auto-fit,minmax(300px,1fr))"
           gap="40px"

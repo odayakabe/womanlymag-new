@@ -19,6 +19,9 @@ const MobileNavToggleContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   margin: ${rem('20px')} 0;
+  position: absolute;
+  top: 0;
+  right: ${rem('15px')};
 `;
 
 const MobileNavToggle = styled.div`

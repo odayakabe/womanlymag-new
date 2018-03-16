@@ -5,6 +5,7 @@ import styledNormalize from 'styled-normalize';
 import { Grid, Cell } from 'styled-css-grid';
 /* eslint-disable import/no-unresolved */
 import { Default, Mobile } from 'components/responsive';
+import Header from 'components/header/header';
 import NavBar from 'components/navbar/navbar';
 import mainTheme from 'styles/mainTheme';
 /* eslint-enable import/no-unresolved */
@@ -50,6 +51,7 @@ const TemplateWrapper = ({ children }) => (
     />
     <ThemeProvider theme={mainTheme}>
       <div>
+        <Header />
         <Mobile>
           <MobileNavContainer columns={12}>
             <Cell />

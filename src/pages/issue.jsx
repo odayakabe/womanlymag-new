@@ -1,16 +1,26 @@
 import React from 'react';
+import styled from 'styled-components';
 /* eslint-disable import/no-unresolved */
+import { Default, Mobile } from 'components/responsive';
 import ArticleGrid from 'components/articleGrid/articleGrid';
 /* eslint-enable import/no-unresolved */
 
+const MobileHeader = styled.h1`
+  text-align: center;
+`;
+
 const IssuePage = ({ data }) => {
   const { us: { articles, number, title } } = data;
+  const headerText = `Issue #${number}: ${title}`;
 
   return (
     <React.Fragment>
-      <h1>
-        Issue #{number}: {title}
-      </h1>
+      <Mobile>
+        <MobileHeader>{headerText}</MobileHeader>
+      </Mobile>
+      <Default>
+        <h1>{headerText}</h1>
+      </Default>
       <ArticleGrid articles={articles} />
     </React.Fragment>
   );

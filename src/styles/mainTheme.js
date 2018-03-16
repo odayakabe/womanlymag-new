@@ -1,24 +1,27 @@
 import { transparentize } from 'polished';
 
 const blue = '#8fc3e9';
-const black = '#000';
-const pink = '#EECFCE';
 const red = '#f26a5c';
 const orange = '#D46A43';
+const yellow = '#FDCE9D';
+const navy = '#2D3540';
+const beige = '#F7F0e6';
 
 export default {
-  accent: pink,
-  inputBgFocusColor: transparentize(0.85, blue),
-  inputBorderColor: transparentize(0.75, black),
-  issueLabelBg: pink,
+  accent: beige,
+  buttonHoverColor: yellow,
   errorBackgroundColor: transparentize(0.85, red),
   errorColor: red,
-  labelColor: transparentize(0.25, black),
+  headerBorderColor: yellow,
+  inputBgFocusColor: transparentize(0.85, beige),
+  inputBorderColor: transparentize(0.75, navy),
+  issueLabelBg: beige,
+  labelColor: transparentize(0.25, navy),
   linkHoverColor: blue,
   mobileMax: '767px',
-  mobileNavBackground: pink,
+  mobileNavBackground: beige,
   navLinkHoverBorder: blue,
   sansSerifFont: '"Yantramanav",sans-serif',
-  text: black,
+  text: navy,
   warningColor: orange,
 };
