@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import queryString from 'query-string';
 import { Form as ReactForm } from 'react-form';
 import styled from 'styled-components';
 /* eslint-disable import/no-unresolved */
@@ -11,6 +10,11 @@ const SuccessText = styled.div`
   text-align: center;
   font-size: 125%;
 `;
+
+const encode = data =>
+  Object.keys(data)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join('&');
 
 class Form extends Component {
   state = {
@@ -30,7 +34,7 @@ class Form extends Component {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: queryString.stringify({
+      body: encode({
         'form-name': name,
         ...values,
       }),
