@@ -8,11 +8,11 @@ const Promise = require('bluebird');
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
-
+/* eslint-disable global-require */
 exports.onPreBootstrap = () => {
   require('isomorphic-fetch');
 };
-
+/* eslint-enable global-require */
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
 
@@ -114,42 +114,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                 });
               });
             });
-          })
-          .then(() => {
-            graphql(`
-              {
-                allContentfulFooter(limit: 1000) {
-                  edges {
-                    node {
-                      id
-                    }
-                  }
-                }
-              }
-            `).then(result => {
-              // Create Footer
-              const template = path.resolve(
-                './src/components/footer/footer.jsx'
-              );
-              createPage({
-                path: '/footer',
-                component: slash(template),
-              });
-
-              _.each(result.data.allContentfulFooter.edges, edge => {
-                const Footer = path.resolve(
-                  './src/components/footer/footer.jsx'
-                );
-                createPage({
-                  path: `/footer`,
-                  component: slash(Footer),
-                  context: {
-                    id: edge.node.id,
-                  },
-                });
-              });
-            });
-
             resolve();
           });
       });
