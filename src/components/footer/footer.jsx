@@ -65,36 +65,47 @@ const FooterLeft = styled.div`
   display: flex;
 `;
 
+const MobileFooterContainer = FooterContainer.extend`
+  height: 50vh;
+`;
+
+const SocialLinks = () => (
+  <List>
+    <ListItem>
+      <a href="https://www.facebook.com/womanlymag">
+        <FontAwesomeIcon icon={['fab', 'facebook-f']} size="lg" />
+      </a>
+    </ListItem>
+    <ListItem>
+      <a href="https://twitter.com/womanlymag">
+        <FontAwesomeIcon icon={['fab', 'twitter']} size="lg" />
+      </a>
+    </ListItem>
+    <ListItem>
+      <a href="https://www.instagram.com/womanlymag">
+        <FontAwesomeIcon icon={['fab', 'instagram']} size="lg" />
+      </a>
+    </ListItem>
+  </List>
+);
+
+const FooterForm = () => (
+  <FormContainer>
+    <Form name="subscribe" successText="You subscribed!">
+      <Input
+        addOn={<Button text="Subscribe" />}
+        label={{ text: 'Subscribe to our newsletter!' }}
+        name="email"
+        placeholder="example@email.com"
+        validate={isEmail}
+        required
+      />
+    </Form>
+  </FormContainer>
+);
+
 const Footer = () => (
   <div>
-    <Mobile>
-      <Grid columns={12}>
-        <Cell />
-        <Cell width={10}>
-          <FooterLinks>
-            <ContactLink href="/about">Contact Us</ContactLink>
-            <List>
-              <ListItem>
-                <a href="">
-                  <FontAwesomeIcon icon={['fab', 'facebook-f']} size="lg" />
-                </a>
-              </ListItem>
-              <ListItem>
-                <a href="">
-                  <FontAwesomeIcon icon={['fab', 'twitter']} size="lg" />
-                </a>
-              </ListItem>
-              <ListItem>
-                <a href="">
-                  <FontAwesomeIcon icon={['fab', 'instagram']} size="lg" />
-                </a>
-              </ListItem>
-            </List>
-          </FooterLinks>
-        </Cell>
-        <Cell />
-      </Grid>
-    </Mobile>
     <Default>
       <FooterContainer>
         <Grid columns={12} alignContent="center">
@@ -106,44 +117,32 @@ const Footer = () => (
               </LogoContainer>
               <FooterLinks>
                 <ContactLink href="/about">Contact Us</ContactLink>
-                <List>
-                  <ListItem>
-                    <a href="https://www.facebook.com/womanlymag">
-                      <FontAwesomeIcon icon={['fab', 'facebook-f']} size="lg" />
-                    </a>
-                  </ListItem>
-                  <ListItem>
-                    <a href="https://twitter.com/womanlymag">
-                      <FontAwesomeIcon icon={['fab', 'twitter']} size="lg" />
-                    </a>
-                  </ListItem>
-                  <ListItem>
-                    <a href="https://www.instagram.com/womanlymag">
-                      <FontAwesomeIcon icon={['fab', 'instagram']} size="lg" />
-                    </a>
-                  </ListItem>
-                </List>
+                <SocialLinks />
               </FooterLinks>
             </FooterLeft>
           </Cell>
           <Cell width={4}>
-            <FormContainer>
-              <Form name="subscribe" successText="You subscribed!">
-                <Input
-                  addOn={<Button text="Subscribe" />}
-                  label={{ text: 'Subscribe to our newsletter!' }}
-                  name="email"
-                  placeholder="example@email.com"
-                  validate={isEmail}
-                  required
-                />
-              </Form>
-            </FormContainer>
+            <FooterForm />
           </Cell>
           <Cell />
         </Grid>
       </FooterContainer>
     </Default>
+    <Mobile>
+      <MobileFooterContainer>
+        <Grid columns={12}>
+          <Cell />
+          <Cell width={10}>
+            <FooterLinks>
+              <ContactLink href="/about">Contact Us</ContactLink>
+              <SocialLinks />
+            </FooterLinks>
+            <FooterForm />
+          </Cell>
+          <Cell />
+        </Grid>
+      </MobileFooterContainer>
+    </Mobile>
   </div>
 );
 
