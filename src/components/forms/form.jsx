@@ -59,8 +59,8 @@ class Form extends Component {
             {formApi => (
               <form
                 onSubmit={formApi.submitForm}
-                netlify={isNetlifyForm}
-                netlify-honeypot="bot-field"
+                data-netlify={isNetlifyForm}
+                data-netlify-honeypot="bot-field"
               >
                 <input type="hidden" name={name} value={name} />
                 {isNetlifyForm && (
