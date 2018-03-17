@@ -64,6 +64,5 @@ module.exports = {
         fonts: ['Yantramanav:100,400,700,900'],
       },
     },
-    'gatsby-plugin-netlify', // Important: make sure to put last in the array
   ],
 };
