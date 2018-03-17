@@ -29,7 +29,7 @@ class Form extends Component {
       return onSubmit(values);
     }
 
-    fetch('/', {
+    fetch('https://briskforms.com/go/805a910e93420bc71aadb2be7ce4c982', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
