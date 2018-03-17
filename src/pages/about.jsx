@@ -65,7 +65,6 @@ const AboutPage = ({ data }) => {
         <Form
           name="contact"
           successText="Thanks! We'll be reaching out shortly."
-          isNetlifyForm
         >
           <Input
             label={{ text: 'Name' }}

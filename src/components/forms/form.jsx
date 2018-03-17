@@ -29,7 +29,7 @@ class Form extends Component {
       return onSubmit(values);
     }
 
-    fetch('https://briskforms.com/go/805a910e93420bc71aadb2be7ce4c982', {
+    fetch(`${process.env.FORM_SUBMISSION_URL}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -55,7 +55,7 @@ class Form extends Component {
   };
 
   render() {
-    const { children, isNetlifyForm, name, successText } = this.props;
+    const { children, name, successText } = this.props;
     return (
       <React.Fragment>
         {this.state.error && <ErrorMessage text={this.state.error} />}
@@ -63,21 +63,8 @@ class Form extends Component {
         {!this.state.submitted && (
           <ReactForm onSubmit={this.handleSubmit}>
             {formApi => (
-              <form
-                method="post"
-                name={name}
-                onSubmit={formApi.submitForm}
-                data-netlify={isNetlifyForm}
-                data-netlify-honeypot="bot-field"
-              >
+              <form method="post" name={name} onSubmit={formApi.submitForm}>
                 <input type="hidden" name="form-name" value={name} />
-                {isNetlifyForm && (
-                  <p hidden>
-                    <label htmlFor="bot-field">
-                      Don&apos;t fill this out: <input name="bot-field" />
-                    </label>
-                  </p>
-                )}
                 {React.Children.map(children, child => child)}
               </form>
             )}
@@ -89,14 +76,12 @@ class Form extends Component {
 }
 
 Form.defaultProps = {
-  isNetlifyForm: false,
   onSubmit: null,
   successText: '',
 };
 
 Form.propTypes = {
   name: PropTypes.string.isRequired,
-  isNetlifyForm: PropTypes.bool,
   onSubmit: PropTypes.func,
   successText: PropTypes.string,
 };
