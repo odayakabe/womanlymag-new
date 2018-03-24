@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-/* eslint-disable import/no-unresolved */
+
 import { Default, Mobile } from 'components/responsive';
 import ArticleGrid from 'components/articleGrid/articleGrid';
-/* eslint-enable import/no-unresolved */
 
 const MobileHeader = styled.h1`
   text-align: center;

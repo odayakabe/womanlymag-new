@@ -2,10 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid, Cell } from 'styled-css-grid';
 import { rem } from 'polished';
-/* eslint-disable import/no-unresolved */
+
 import { Default, Mobile } from 'components/responsive';
 import Image from 'components/image/image';
-/* eslint-enable import/no-unresolved */
 
 const HeroContainer = styled.div`
   margin-bottom: ${rem('30px')};

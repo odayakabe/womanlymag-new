@@ -2,13 +2,12 @@ import React from 'react';
 import { Grid, Cell } from 'styled-css-grid';
 import styled from 'styled-components';
 import { rem } from 'polished';
-/* eslint-disable import/no-unresolved */
+
 import Audio from 'components/audio/audio';
 import Contributor from 'components/contributor/contributor';
 import Lightbox from 'components/lightbox/lightbox';
 import Paragraph from 'components/typography/paragraph';
 import Video from 'components/video/video';
-/* eslint-enable import/no-unresolved */
 
 const Issue = styled.div`
   display: inline-block;

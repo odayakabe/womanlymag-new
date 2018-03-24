@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { rem } from 'polished';
-/* eslint-disable import/no-unresolved */
+
 import { Default, Mobile } from 'components/responsive';
 import logo from 'images/logo.png';
-/* eslint-enable import/no-unresolved */
 
 const Container = styled.div`
   position: relative;

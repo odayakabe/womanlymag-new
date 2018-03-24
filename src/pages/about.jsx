@@ -3,7 +3,7 @@ import _ from 'lodash';
 import styled from 'styled-components';
 import { Grid, Cell } from 'styled-css-grid';
 import { rem } from 'polished';
-/* eslint-disable import/no-unresolved */
+
 import Button from 'components/button/button';
 import Contributor from 'components/contributor/contributor';
 import { Default, Mobile } from 'components/responsive';
@@ -12,7 +12,6 @@ import Image from 'components/image/image';
 import { isEmail, isRequired } from 'components/forms/validations';
 import { List, ListItem } from 'components/list';
 import Paragraph from 'components/typography/paragraph';
-/* eslint-enable import/no-unresolved */
 
 const StyledMobile = styled(Mobile)`
   padding: ${rem('20px')};

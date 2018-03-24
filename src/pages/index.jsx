@@ -1,8 +1,7 @@
 import React from 'react';
-/* eslint-disable import/no-unresolved */
+
 import ArticleGrid from 'components/articleGrid/articleGrid';
 import Hero from 'components/hero/hero';
-/* eslint-enable import/no-unresolved */
 
 const IndexPage = ({ data }) => {
   const usNode = data.us.edges[0].node;

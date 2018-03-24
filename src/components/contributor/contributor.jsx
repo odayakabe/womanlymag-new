@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import styled from 'styled-components';
 import { rem } from 'polished';
-/* eslint-disable import/no-unresolved */
+
 import { List, ListItem } from 'components/list';
 import Paragraph from 'components/typography/paragraph';
 import TextLink from 'components/textLink/textLink';
-/* eslint-enable import/no-unresolved */
 
 const Heading = styled.span`
   display: flex;

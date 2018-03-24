@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import ReactLightbox from 'react-image-lightbox';
 import styled from 'styled-components';
 import { rem } from 'polished';
-/* eslint-disable import/no-unresolved */
+
 import Image from 'components/image/image';
-/* eslint-enable import/no-unresolved */
 
 const StyledImage = styled(Image)`
   margin-bottom: ${rem('20px')};

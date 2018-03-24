@@ -25,5 +25,10 @@
   },
   "globals": {
     "graphql": true
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
   }
 }

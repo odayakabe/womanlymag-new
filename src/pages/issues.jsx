@@ -3,11 +3,10 @@ import _ from 'lodash';
 import { Grid, Cell } from 'styled-css-grid';
 import styled from 'styled-components';
 import { rem } from 'polished';
-/* eslint-disable import/no-unresolved */
+
 import { Default, Mobile } from 'components/responsive';
 import HoverOverlay from 'components/hoverOverlay/hoverOverlay';
 import Image from 'components/image/image';
-/* eslint-enable import/no-unresolved */
 
 const MobileContainer = styled.div`
   margin: 0 ${rem('30px')};

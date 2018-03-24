@@ -6,10 +6,8 @@ import { rem, transitions } from 'polished';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faBars from '@fortawesome/fontawesome-free-solid/faBars';
 
-/* eslint-disable import/no-unresolved */
 import { Default, Mobile } from 'components/responsive';
 import TextLink from 'components/textLink/textLink';
-/* eslint-enable import/no-unresolved */
 
 const Nav = styled.nav`
   padding: ${rem('20px')};

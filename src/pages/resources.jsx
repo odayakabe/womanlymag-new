@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { rem } from 'polished';
-/* eslint-disable import/no-unresolved */
+
 import { Default, Mobile } from 'components/responsive';
 import { List, ListItem } from 'components/list';
 import TextLink from 'components/textLink/textLink';
-/* eslint-enable import/no-unresolved */
 
 const StyledMobile = styled(Mobile)`
   padding: ${rem('20px')};

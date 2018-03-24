@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Form as ReactForm } from 'react-form';
 import styled from 'styled-components';
-/* eslint-disable import/no-unresolved */
+
 import ErrorMessage from 'components/forms/errorMessage';
-/* eslint-enable import/no-unresolved */
 
 const SuccessText = styled.div`
   text-align: center;
