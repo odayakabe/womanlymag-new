@@ -56,6 +56,7 @@ const Contributor = ({ bio, name, socialMediaLinks, title }) => (
 Contributor.defaultProps = {
   bio: null,
   socialMediaLinks: null,
+  title: null,
 };
 
 Contributor.propTypes = {
@@ -71,7 +72,7 @@ Contributor.propTypes = {
       type: PropTypes.string,
     })
   ),
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 };
 
 export default Contributor;

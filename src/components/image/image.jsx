@@ -11,7 +11,7 @@ const ImageContainer = styled.div`
   cursor: ${props => (props.onClick ? 'pointer' : 'default')};
 `;
 
-const StyledImage = styled(GatsbyImage)`
+const StyledImage = styled(({ circle, ...rest }) => <GatsbyImage {...rest} />)`
   border-radius: ${props => (props.circle ? '50%' : '0')};
 `;
 
@@ -20,10 +20,9 @@ const StyledCaption = styled.div`
     props.captionPosition === 'right' ? rem('20px') : '0'};
 `;
 
-const StyledBackgroundImage = styled.div.attrs({
-  backgroundImages: props => props.sizes || props.resolutions,
-})`
-  background-image: url(${props => props.backgroundImages.src});
+const StyledBackgroundImage = styled.div`
+  background-image: url(${props =>
+    props.sizes ? props.sizes.src : props.resolutions.src});
   background-repeat: no-repeat;
   background-size: ${props => props.backgroundSize};
   height: inherit;

@@ -4,7 +4,9 @@ import Link from 'gatsby-link';
 import styled from 'styled-components';
 import { rem, transitions } from 'polished';
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(({ large, underline, withHover, ...rest }) => (
+  <Link {...rest} />
+))`
   color: ${props => props.theme.text};
   text-decoration: ${props => (props.underline ? 'underline' : 'none')};
   font-weight: 700;

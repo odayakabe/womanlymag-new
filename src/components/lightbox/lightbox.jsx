@@ -6,7 +6,7 @@ import { rem } from 'polished';
 
 import Image from 'components/image/image';
 
-const StyledImage = styled(Image)`
+const StyledImage = styled(({ ...rest }) => <Image {...rest} />)`
   margin-bottom: ${rem('20px')};
 `;
 
@@ -59,9 +59,10 @@ class Lightbox extends Component {
 
     return (
       <React.Fragment>
-        {images.map(image => (
+        {images.map((image, index) => (
           <StyledImage
             alt={image.description || image.title}
+            key={`${image.title}-${index}`}
             onClick={this.onClickImage}
             sizes={image.sizes}
             title={image.title}
@@ -92,7 +93,12 @@ Lightbox.propTypes = {
       aspectRatio: PropTypes.number,
       base64: PropTypes.string,
       description: PropTypes.string,
-      sizes: PropTypes.string,
+      sizes: PropTypes.shape({
+        aspectRatio: PropTypes.number,
+        base64: PropTypes.string,
+        sizes: PropTypes.string,
+        src: PropTypes.string,
+      }),
       src: PropTypes.string,
       srcSet: PropTypes.string,
       title: PropTypes.string,

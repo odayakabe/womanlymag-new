@@ -21,7 +21,8 @@
     "react/jsx-filename-extension": "off",
     "import/extensions" : ["error", { "jsx": "never" } ],
     "no-unused-expressions": ["error", { "allowTaggedTemplates": true }],
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "react/no-array-index-key": "off"
   },
   "globals": {
     "graphql": true

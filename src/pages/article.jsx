@@ -18,7 +18,7 @@ const Issue = styled.div`
   margin-bottom: ${rem('15px')};
 `;
 
-const ContentCell = styled(Cell)`
+const ContentCell = styled(({ ...rest }) => <Cell {...rest} />)`
   @media (max-width: ${props => props.theme.mobileMax}) {
     padding: 0 ${rem('20px')};
     text-align: center;
@@ -52,7 +52,7 @@ const ArticlePage = ({ data }) => {
         <Issue>{`Issue ${issue[0].number}: ${issue[0].title}`}</Issue>
         <h1>{title}</h1>
         {contributors.map(contributor => (
-          <Contributor name={contributor.name} />
+          <Contributor key={contributor.name} name={contributor.name} />
         ))}
         {text && (
           <Paragraph>
