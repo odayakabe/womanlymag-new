@@ -63,6 +63,7 @@ const TemplateWrapper = ({ children }) => (
           <Grid columns={12}>
             <Cell width={12}>{children()}</Cell>
           </Grid>
+          <Footer />
         </Mobile>
         <Default>
           <Grid columns={12}>
