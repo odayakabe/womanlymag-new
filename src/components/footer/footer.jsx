@@ -62,7 +62,9 @@ const ListItem = styled.li`
 `;
 
 const FormContainer = styled.div`
-  vertical-align: middle;
+  div {
+    margin-bottom: 0;
+  }
 `;
 
 const MobileFooterContainer = FooterContainer.extend`
@@ -130,7 +132,7 @@ const Footer = () => (
       <FooterContainer>
         <Grid columns={12} alignContent="center">
           <Cell />
-          <Cell width={6}>
+          <Cell width={6} middle>
             <FooterLeft>
               <LogoContainer>
                 <img alt="footer-logo" src={Logo} />
@@ -141,7 +143,7 @@ const Footer = () => (
               </FooterLinks>
             </FooterLeft>
           </Cell>
-          <Cell width={4}>
+          <Cell width={4} middle>
             <FormContainer>
               <FooterForm />
             </FormContainer>
