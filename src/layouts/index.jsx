@@ -7,6 +7,7 @@ import { Grid, Cell } from 'styled-css-grid';
 import { Default, Mobile } from 'components/responsive';
 import Header from 'components/header/header';
 import NavBar from 'components/navbar/navbar';
+import Footer from 'components/footer/footer';
 import mainTheme from 'styles/mainTheme';
 
 injectGlobal`
@@ -62,6 +63,7 @@ const TemplateWrapper = ({ children }) => (
           <Grid columns={12}>
             <Cell width={12}>{children()}</Cell>
           </Grid>
+          <Footer />
         </Mobile>
         <Default>
           <Grid columns={12}>
@@ -72,6 +74,7 @@ const TemplateWrapper = ({ children }) => (
             </Cell>
             <Cell />
           </Grid>
+          <Footer />
         </Default>
       </div>
     </ThemeProvider>

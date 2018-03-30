@@ -8,11 +8,11 @@ const Promise = require('bluebird');
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
-
+/* eslint-disable global-require */
 exports.onPreBootstrap = () => {
   require('isomorphic-fetch');
 };
-
+/* eslint-enable global-require */
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
 
@@ -114,7 +114,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                 });
               });
             });
-
             resolve();
           });
       });

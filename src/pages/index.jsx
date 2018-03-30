@@ -1,5 +1,4 @@
 import React from 'react';
-
 import ArticleGrid from 'components/articleGrid/articleGrid';
 import Hero from 'components/hero/hero';
 
