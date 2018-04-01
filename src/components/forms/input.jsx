@@ -26,7 +26,7 @@ export const StyledInput = styled.input`
   }
 `;
 
-const Input = ({ addOn, label, name, placeholder, required, validate }) => (
+const Input = ({ addOn, id, label, name, placeholder, required, validate }) => (
   <FormField
     addOn={addOn}
     label={label}
@@ -36,6 +36,7 @@ const Input = ({ addOn, label, name, placeholder, required, validate }) => (
     render={({ value, error, setValue, setTouched }) => (
       <StyledInput
         addOn={addOn}
+        id={id || name}
         error={error}
         value={_.get(value, '')}
         onChange={e => {
@@ -52,6 +53,7 @@ const Input = ({ addOn, label, name, placeholder, required, validate }) => (
 
 Input.defaultProps = {
   addOn: null,
+  id: null,
   placeholder: '',
   required: false,
   validate: null,
@@ -59,6 +61,7 @@ Input.defaultProps = {
 
 Input.propTypes = {
   addOn: PropTypes.element,
+  id: PropTypes.string,
   label: PropTypes.shape({
     hidden: PropTypes.bool,
     text: PropTypes.string.isRequired,

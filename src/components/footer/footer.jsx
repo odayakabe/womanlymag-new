@@ -7,10 +7,8 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import brands from '@fortawesome/fontawesome-free-brands';
 
 import { Default, Mobile } from 'components/responsive';
-import { Form, Input } from 'components/forms';
-import { isEmail } from 'components/forms/validations';
-import Button from 'components/button/button';
 import Logo from 'components/logo/footer_logo.png';
+import FooterForm from './form';
 
 fontawesome.library.add(brands);
 
@@ -100,32 +98,6 @@ const SocialLinks = () => (
   </List>
 );
 
-const FooterForm = () => (
-  <Form name="subscribe" successText="You subscribed!">
-    <Input
-      addOn={<Button text="Subscribe" />}
-      label={{ text: 'Subscribe to our newsletter!' }}
-      name="email"
-      placeholder="example@email.com"
-      validate={isEmail}
-      required
-    />
-  </Form>
-);
-
-const MobileFooterForm = () => (
-  <Form name="subscribe" successText="You subscribed!">
-    <Input
-      label={{ text: 'Subscribe to our newsletter!' }}
-      name="email"
-      placeholder="example@email.com"
-      validate={isEmail}
-      required
-    />
-    <Button text="Subscribe!" />
-  </Form>
-);
-
 const Footer = () => (
   <div>
     <Default>
@@ -171,7 +143,7 @@ const Footer = () => (
           <Cell width={2} />
           <Cell width={8}>
             <MobileFormContainer>
-              <MobileFooterForm />
+              <FooterForm isMobile />
             </MobileFormContainer>
           </Cell>
           <Cell width={2} />
