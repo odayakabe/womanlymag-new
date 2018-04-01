@@ -25,7 +25,7 @@ class Form extends Component {
     const { name, onSubmit } = this.props;
 
     if (onSubmit) {
-      return onSubmit(values);
+      return onSubmit(event);
     }
 
     fetch(`${process.env.FORM_SUBMISSION_URL}`, {
@@ -54,15 +54,33 @@ class Form extends Component {
   };
 
   render() {
-    const { children, name, successText } = this.props;
+    const {
+      action,
+      children,
+      id,
+      name,
+      preventFormDefault,
+      successText,
+      target,
+    } = this.props;
     return (
       <React.Fragment>
         {this.state.error && <ErrorMessage text={this.state.error} />}
         {this.state.submitted && <SuccessText>{successText}</SuccessText>}
         {!this.state.submitted && (
-          <ReactForm onSubmit={this.handleSubmit}>
+          <ReactForm
+            onSubmit={this.handleSubmit}
+            preventDefault={preventFormDefault}
+          >
             {formApi => (
-              <form method="post" name={name} onSubmit={formApi.submitForm}>
+              <form
+                action={action}
+                id={id}
+                method="post"
+                name={name}
+                onSubmit={formApi.submitForm}
+                target={target}
+              >
                 <input type="hidden" name="form-name" value={name} />
                 {React.Children.map(children, child => child)}
               </form>
@@ -75,14 +93,22 @@ class Form extends Component {
 }
 
 Form.defaultProps = {
+  action: null,
+  id: null,
   onSubmit: null,
+  preventFormDefault: true,
   successText: '',
+  target: '_blank',
 };
 
 Form.propTypes = {
+  action: PropTypes.string,
+  id: PropTypes.string,
   name: PropTypes.string.isRequired,
   onSubmit: PropTypes.func,
+  preventFormDefault: PropTypes.bool,
   successText: PropTypes.string,
+  target: PropTypes.string,
 };
 
 export default Form;
