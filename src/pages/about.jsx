@@ -95,21 +95,23 @@ const AboutPage = ({ data }) => {
         <List>
           {_.map(contributorsList.items, contributor => (
             <StyledListItem id={contributor.name} key={contributor.name}>
-              <Image
-                resolutions={contributor.image.resolutions}
-                alt={contributor.name}
-                title={contributor.title}
-                caption={
-                  <Contributor
-                    bio={contributor.bio}
-                    name={contributor.name}
-                    socialMediaLinks={contributor.socialMediaLinks}
-                    title={contributor.title}
-                  />
-                }
-                captionPosition="right"
-                circle
-              />
+              {contributor.image && (
+                <Image
+                  resolutions={contributor.image.resolutions}
+                  alt={contributor.name}
+                  title={contributor.title}
+                  caption={
+                    <Contributor
+                      bio={contributor.bio}
+                      name={contributor.name}
+                      socialMediaLinks={contributor.socialMediaLinks}
+                      title={contributor.title}
+                    />
+                  }
+                  captionPosition="right"
+                  circle
+                />
+              )}
             </StyledListItem>
           ))}
         </List>

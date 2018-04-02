@@ -24,6 +24,10 @@ const Name = styled.h3`
   padding-right: ${rem('10px')};
 `;
 
+const StyledListItem = styled(({ ...rest }) => <ListItem {...rest} />)`
+  margin-right: ${rem('10px')};
+`;
+
 const Contributor = ({ bio, name, socialMediaLinks, title }) => (
   <div>
     <Heading>
@@ -43,9 +47,9 @@ const Contributor = ({ bio, name, socialMediaLinks, title }) => (
       {socialMediaLinks && (
         <List inline>
           {_.map(socialMediaLinks, (link, id) => (
-            <ListItem key={id}>
+            <StyledListItem key={id}>
               <TextLink external to={link.url} text={link.type} underline />
-            </ListItem>
+            </StyledListItem>
           ))}
         </List>
       )}
