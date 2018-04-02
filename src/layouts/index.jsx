@@ -52,21 +52,20 @@ const TemplateWrapper = ({ children }) => (
     <ThemeProvider theme={mainTheme}>
       <div>
         <Header />
-        {!process.env.GATSBY_UNDER_CONSTRUCTION_BS && (
-          <Mobile>
-            <MobileNavContainer columns={12}>
-              <Cell />
-              <Cell width={10}>
-                <NavBar />
-              </Cell>
-              <Cell />
-            </MobileNavContainer>
-            <Grid columns={12}>
-              <Cell width={12}>{children()}</Cell>
-            </Grid>
-            <Footer />
-          </Mobile>
-        )}
+        <Mobile>
+          <MobileNavContainer columns={12}>
+            <Cell />
+            <Cell width={10}>
+              {!process.env.GATSBY_UNDER_CONSTRUCTION_BS && <NavBar />}
+            </Cell>
+            <Cell />
+          </MobileNavContainer>
+          <Grid columns={12}>
+            <Cell width={12}>{children()}</Cell>
+          </Grid>
+          <Footer />
+        </Mobile>
+        )
         <Default>
           <Grid columns={12}>
             <Cell />
